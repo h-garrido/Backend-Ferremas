@@ -7,13 +7,13 @@ const Empleado = sequelize.define('Empleado', {
         autoIncrement: true,
         primaryKey: true
     },
-    nombre_empleado: {
+    nombre: {
         type: DataTypes.STRING
     },
-    rut_empleado: {
+    rut: {
         type: DataTypes.STRING
     },
-    cargo_empleado: {
+    cargo: {
         type: DataTypes.ENUM('Bodeguero', 'Vendedor', 'Contador', 'Administrador')
     },
     usuario: {

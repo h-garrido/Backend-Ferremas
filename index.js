@@ -15,14 +15,14 @@ const clienteRoutes = require('./routes/clienteRoutes');
 const empleadoRoutes = require('./routes/empleadoRoutes');
 const productoRoutes = require('./routes/productoRoutes');
 const transaccionRoutes = require('./routes/transaccionRoutes');
-const pedidoRoutes = require('./routes/pedidoRoutes');
+const pedidosRoutes = require('./routes/pedidosRoutes');
 
 // Usar rutas
 app.use('/clientes', clienteRoutes);
 app.use('/empleados', empleadoRoutes);
 app.use('/productos', productoRoutes);
 app.use('/transacciones', transaccionRoutes);
-app.use('/pedidos', pedidoRoutes);
+app.use('/pedidos', pedidosRoutes);
 
 // Middleware
 app.use(morgan('dev'));

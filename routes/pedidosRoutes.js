@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pedidoController = require('../controllers/pedidoController');
+const pedidosController = require('../controllers/pedidosController');
 
 /**
  * @swagger
@@ -25,7 +25,7 @@ const pedidoController = require('../controllers/pedidoController');
  *               items:
  *                 $ref: '#/components/schemas/Pedido'
  */
-router.get('/', pedidoController.getAllPedidos);
+router.get('/', pedidosController.getAllPedidos);
 
 /**
  * @swagger
@@ -47,7 +47,7 @@ router.get('/', pedidoController.getAllPedidos);
  *             schema:
  *               $ref: '#/components/schemas/Pedido'
  */
-router.post('/', pedidoController.createPedido);
+router.post('/', pedidosController.createPedido);
 
 /**
  * @swagger
@@ -72,7 +72,7 @@ router.post('/', pedidoController.createPedido);
  *       404:
  *         description: Pedido no encontrado
  */
-router.get('/:id_pedido', pedidoController.getPedidoById);
+router.get('/:id_pedido', pedidosController.getPedidoById);
 
 /**
  * @swagger
@@ -103,7 +103,7 @@ router.get('/:id_pedido', pedidoController.getPedidoById);
  *       404:
  *         description: Pedido no encontrado
  */
-router.put('/:id_pedido', pedidoController.updatePedido);
+router.put('/:id_pedido', pedidosController.updatePedido);
 
 /**
  * @swagger
@@ -124,6 +124,6 @@ router.put('/:id_pedido', pedidoController.updatePedido);
  *       404:
  *         description: Pedido no encontrado
  */
-router.delete('/:id_pedido', pedidoController.deletePedido);
+router.delete('/:id_pedido', pedidosController.deletePedido);
 
 module.exports = router;
