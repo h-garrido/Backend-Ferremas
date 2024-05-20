@@ -17,7 +17,7 @@ const Pedidos = sequelize.define('Pedidos', {
         type: DataTypes.STRING
     }
 }, {
-    tableName: 'Pedido',
+    tableName: 'Pedidos',
     timestamps: false
 });
 
