@@ -13,8 +13,21 @@ const Pedidos = sequelize.define('Pedidos', {
     fecha_pedido: {
         type: DataTypes.DATE
     },
-    nombre_cliente: {
-        type: DataTypes.STRING
+    id_cliente: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'Cliente',
+            key: 'id_cliente'
+        },
+        onDelete: 'CASCADE'
+    },
+    id_empleado: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'Empleado',
+            key: 'id_empleado'
+        },
+        onDelete: 'SET NULL'
     }
 }, {
     tableName: 'Pedidos',
@@ -22,3 +35,4 @@ const Pedidos = sequelize.define('Pedidos', {
 });
 
 module.exports = Pedidos;
+
