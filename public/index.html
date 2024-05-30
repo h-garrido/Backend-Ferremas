@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Transbank API</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prueba Transbank API</h1>
+      <h2>Creación de transacción</h2>
+      <form id="createTransactionForm">
+        <label for="buyOrder">Orden de Compra:</label>
+        <input type="text" id="buyOrder" name="buyOrder" required /><br />
+        <label for="sessionId">ID de Sesión:</label>
+        <input type="text" id="sessionId" name="sessionId" required /><br />
+        <label for="amount">Importe:</label>
+        <input type="number" id="amount" name="amount" required /><br />
+        <label for="returnUrl">URL de Retorno:</label>
+        <input type="url" id="returnUrl" name="returnUrl" required /><br />
+        <button type="submit">Crear transacción</button>
+      </form>
+      <h2>Confirmación de transacción</h2>
+      <form id="commitTransactionForm">
+        <label for="token">Token:</label>
+        <input type="text" id="token" name="token" required /><br />
+        <button type="submit">Confirmar transacción</button>
+      </form>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

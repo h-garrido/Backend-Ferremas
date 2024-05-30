@@ -1,32 +1,38 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const dotenv = require("dotenv");
-const morgan = require("morgan");
-const sequelize = require("./config/database");
+const express = require('express');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const sequelize = require('./config/database');
+const path = require('path');
 
 dotenv.config();
 
 const app = express();
 
 // Importar rutas
-const clienteRoutes = require("./routes/clienteRoutes");
-const empleadoRoutes = require("./routes/empleadoRoutes");
-const productoRoutes = require("./routes/productoRoutes");
-const transaccionRoutes = require("./routes/transaccionRoutes");
-const pedidosRoutes = require("./routes/pedidosRoutes");
-const detallePedidosRoutes = require("./routes/detallePedidosRoutes");
+const clienteRoutes = require('./routes/clienteRoutes');
+const empleadoRoutes = require('./routes/empleadoRoutes');
+const productoRoutes = require('./routes/productoRoutes');
+const transaccionRoutes = require('./routes/transaccionRoutes');
+const pedidosRoutes = require('./routes/pedidosRoutes');
+const detallePedidosRoutes = require('./routes/detallePedidosRoutes');
+const transbankRoutes = require('./routes/transbankRoutes');  // Nueva ruta de Transbank
 
-app.use(bodyParser.json());
 // Middleware
-app.use(morgan("dev"));
+app.use(bodyParser.json());
+app.use(morgan('dev'));
+
+// Sirviendo archivos estáticos
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Usar rutas
-app.use("/clientes", clienteRoutes);
-app.use("/empleados", empleadoRoutes);
-app.use("/productos", productoRoutes);
-app.use("/transacciones", transaccionRoutes);
-app.use("/pedidos", pedidosRoutes);
-app.use("/detalle-pedidos", detallePedidosRoutes);
+app.use('/clientes', clienteRoutes);
+app.use('/empleados', empleadoRoutes);
+app.use('/productos', productoRoutes);
+app.use('/transacciones', transaccionRoutes);
+app.use('/pedidos', pedidosRoutes);
+app.use('/detalle-pedidos', detallePedidosRoutes);
+app.use('/transbank', transbankRoutes);
 
 // Sincronizar modelos y luego iniciar el servidor
 sequelize
@@ -38,5 +44,5 @@ sequelize
     });
   })
   .catch((err) => {
-    console.error("Unable to connect to the database:", err);
+    console.error('Unable to connect to the database:', err);
   });
