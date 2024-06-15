@@ -26,7 +26,7 @@ const DetallePedidos = sequelize.define('DetallePedidos', {
     timestamps: false
 });
 
-Producto.belongsToMany(Pedidos, { through: DetallePedidos });
-Pedidos.belongsToMany(Producto, { through: DetallePedidos });
+Producto.belongsToMany(Pedidos, { through: DetallePedidos, foreignKey: 'codigo_producto', otherKey: 'id_pedido' });
+Pedidos.belongsToMany(Producto, { through: DetallePedidos, foreignKey: 'id_pedido', otherKey: 'codigo_producto' });
 
 module.exports = DetallePedidos;
