@@ -39,4 +39,5 @@ Contador, el cual se encarga de:
 - Llevar el registro de las transacciones de venta.
 - Controlar y registrar los pagos y las finanzas de la tienda.
 - Elaborar balances y reportes financieros.
+
 Proyecto realizado utilizando JavaScript con el framework NodeJS para crear el servidor y la interacción con la base de datos de la página web.
