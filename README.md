@@ -23,18 +23,22 @@ administradores, vendedores, bodegueros y contadores, cada uno con responsabilid
 pedidos, inventario y finanzas.
 Cada tienda de "FERREMAS" tiene una manera organizada y eficiente de trabajar, lo que se refleja en la definición de roles 
 específicos para diferentes tareas en cada sucursal. Estos roles son:
+
 Administrador, el cual se encarga de:
 - Generar informes de venta mensual.
 - Generar informes de desempeño de la tienda.
 - Desarrollar estrategias de ventas y promociones.
+
 Vendedor/Encargado, el cual se encarga de:
 - Asesorar a los clientes en la selección de productos.
 - Recibir y procesar pedidos.
 - Gestionar los pagos y facturación.
+
 Bodeguero, el cual se encarga de:
 - Organizar y mantener el inventario.
 - Preparar y entregar los productos a los vendedores para su venta.
 - Asegurar el adecuado almacenamiento de los materiales.
+
 Contador, el cual se encarga de:
 - Llevar el registro de las transacciones de venta.
 - Controlar y registrar los pagos y las finanzas de la tienda.
