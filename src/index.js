@@ -17,6 +17,8 @@ const transaccionRoutes = require('./routes/transaccionRoutes');
 const pedidosRoutes = require('./routes/pedidosRoutes');
 const detallePedidosRoutes = require('./routes/detallePedidosRoutes');
 const transbankRoutes = require('./routes/transbankRoutes');  // Nueva ruta de Transbank
+const empleadoRolRoutes = require('./routes/empleadoRolRoutes');
+const rolRoutes = require('./routes/rolRoutes');
 
 // Middleware
 app.use(bodyParser.json());
@@ -33,6 +35,8 @@ app.use('/transacciones', transaccionRoutes);
 app.use('/pedidos', pedidosRoutes);
 app.use('/detalle-pedidos', detallePedidosRoutes);
 app.use('/transbank', transbankRoutes);
+app.use('/empleados-roles', empleadoRolRoutes);
+app.use('/roles', rolRoutes);
 
 // Sincronizar modelos y luego iniciar el servidor
 sequelize

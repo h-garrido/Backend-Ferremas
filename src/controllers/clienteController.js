@@ -12,7 +12,7 @@ exports.getAllClientes = async (req, res) => {
 exports.createCliente = async (req, res) => {
     try {
         const newCliente = await Cliente.create(req.body);
-        res.json(newCliente);
+        res.json({message: "Cliente creado", newCliente});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -36,7 +36,7 @@ exports.updateCliente = async (req, res) => {
         const updatedCliente = await Cliente.update(req.body, {
             where: { id_cliente: req.params.id_cliente }
         });
-        res.json(updatedCliente);
+        res.json({message: "Cliente actualizado", updatedCliente});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

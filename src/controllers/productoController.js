@@ -12,7 +12,7 @@ exports.getAllProductos = async (req, res) => {
 exports.createProducto = async (req, res) => {
     try {
         const newProducto = await Producto.create(req.body);
-        res.json(newProducto);
+        res.json({message: "Producto creado", newProducto});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -36,7 +36,7 @@ exports.updateProducto = async (req, res) => {
         const updatedProducto = await Producto.update(req.body, {
             where: { codigo_producto: req.params.codigo_producto }
         });
-        res.json(updatedProducto);
+        res.json({message: "Producto actualizado", updatedProducto});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

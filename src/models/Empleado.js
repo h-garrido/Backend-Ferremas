@@ -13,9 +13,6 @@ const Empleado = sequelize.define('Empleado', {
     rut: {
         type: DataTypes.STRING
     },
-    cargo: {
-        type: DataTypes.ENUM('Bodeguero', 'Vendedor', 'Contador', 'Administrador')
-    },
     usuario: {
         type: DataTypes.STRING
     },

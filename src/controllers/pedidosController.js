@@ -12,7 +12,7 @@ exports.getAllPedidos = async (req, res) => {
 exports.createPedido = async (req, res) => {
     try {
         const newPedido = await Pedido.create(req.body);
-        res.json(newPedido);
+        res.json({message: "Pedido creado", newPedido});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -36,7 +36,7 @@ exports.updatePedido = async (req, res) => {
         const updatedPedido = await Pedido.update(req.body, {
             where: { id_pedido: req.params.id_pedido }
         });
-        res.json(updatedPedido);
+        res.json({message: "Pedido actualizado", updatedPedido});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

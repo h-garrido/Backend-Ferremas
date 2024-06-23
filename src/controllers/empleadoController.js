@@ -12,7 +12,7 @@ exports.getAllEmpleados = async (req, res) => {
 exports.createEmpleado = async (req, res) => {
     try {
         const newEmpleado = await Empleado.create(req.body);
-        res.json(newEmpleado);
+        res.json({message: "Empleado creado", newEmpleado});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -36,7 +36,7 @@ exports.updateEmpleado = async (req, res) => {
         const updatedEmpleado = await Empleado.update(req.body, {
             where: { id_empleado: req.params.id_empleado }
         });
-        res.json(updatedEmpleado);
+        res.json({message: "Empleado actualizado", updatedEmpleado});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
