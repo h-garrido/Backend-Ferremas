@@ -16,7 +16,7 @@ const productoRoutes = require('./routes/productoRoutes');
 const transaccionRoutes = require('./routes/transaccionRoutes');
 const pedidosRoutes = require('./routes/pedidosRoutes');
 const detallePedidosRoutes = require('./routes/detallePedidosRoutes');
-const transbankRoutes = require('./routes/transbankRoutes');  // Nueva ruta de Transbank
+const transbankRoutes = require('./routes/transbankRoutes');
 const empleadoRolRoutes = require('./routes/empleadoRolRoutes');
 const rolRoutes = require('./routes/rolRoutes');
 
