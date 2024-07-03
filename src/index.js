@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const sequelize = require('./config/database');
 const path = require('path');
+const cors = require('cors');
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ const rolRoutes = require('./routes/rolRoutes');
 // Middleware
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+app.use(cors());
 
 // Sirviendo archivos estáticos
 app.use(express.static(path.join(__dirname, '../public')));
